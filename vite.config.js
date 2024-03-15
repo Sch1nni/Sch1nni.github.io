@@ -11,6 +11,7 @@ import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 export default defineConfig(({ command, mode }) => {
     const env = loadEnv(mode, process.cwd(), '')
     return {
+        base: "Sch1nni",
         define: {
             'process.env': {
                 BACKEND_BASE_URL: env.BACKEND_BASE_URL,
