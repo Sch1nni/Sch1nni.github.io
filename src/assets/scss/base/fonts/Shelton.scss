@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Shelton';
+    font-weight: 400;
+    font-style: normal;
+
+    src: url("@/assets/fonts/Shelton/Shelton.otf") format("opentype");
+}
+
+.font-shelton {
+    font-family: 'Shelton', sans-serif;
+}
