@@ -1,0 +1,19 @@
+@import './fonts/Shelton.scss';
+@import './fonts/imb_plex_mono.scss';
+// @import './fonts/imb_plex.scss';
+
+html {
+
+    p {
+        font-family: 'imb_mono', sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    small {
+        font-family: 'imb_mono', sans-serif;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+}

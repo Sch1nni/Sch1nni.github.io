@@ -1,0 +1,35 @@
+{
+    "DataTable": {
+        "thPaddingLarge": "16px",
+        "thPaddingSmall": "10px",
+        "actionDividerColor": "rgba(0, 0, 255, 1)",
+        "borderColor": "rgba(0, 215, 255, 1)"
+    },
+    "Button": {
+        "rippleDuration": "0s",
+        "paddingMedium": "20px 40px",
+        
+        "textColor": "#3D3B3E",
+        "border": "2px solid #3D3B3E",
+        
+        "textColorHover": "#3D3B3E",
+        "colorHover": "#00000010",
+        "borderHover": "2px solid #3D3B3E10",
+
+        "textColorFocus": "#3D3B3E",
+        "colorFocus": "#00000010",
+        "borderFocus": "2px solid #3D3B3E10",
+        
+        "textColorPressed": "#3D3B3E",
+        "colorPressed": "#00000030",
+        "borderPressed": "2px solid #3D3B3E10",
+
+        "textColorTertiary": "#ffffff",
+        "colorSecondary": "#000000",
+
+        "colorSecondaryHover": "#00000080",
+
+        "colorSecondaryPressed": "#00000060"
+
+    }
+}

@@ -1,0 +1,22 @@
+.cursor {
+    position: fixed !important;
+    border-radius: 20px;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border: solid 1px #1A375E;
+    pointer-events: none;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    svg{
+        width: 40px;
+        height: 40px;
+        margin: 0;
+        padding: 0;
+    }
+
+}

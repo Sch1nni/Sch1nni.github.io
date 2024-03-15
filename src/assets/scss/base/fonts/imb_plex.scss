@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'ibm';
+    font-weight: 400;
+    font-style: normal;
+    src: url("@/assets/fonts/IBM_Plex/IBMPlexSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'ibm';
+    font-weight: 100;
+    font-style: normal;
+    src: url("@/assets/fonts/IBM_Plex/IBMPlexSans-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'ibm';
+    font-weight: 600;
+    font-style: normal;
+    src: url("@/assets/fonts/IBM_Plex/IBMPlexSans-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'ibm';
+    font-weight: 700;
+    font-style: normal;
+    src: url("@/assets/fonts/IBM_Plex/IBMPlexSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'ibm';
+    font-weight: 400;
+    font-style: italic;
+    src: url("@/assets/fonts/IBM_Plex/IBMPlexSans-MediumItalic.ttf") format("truetype");
+}
+
+.font-ibm {
+    font-family: 'ibm', sans-serif;
+}
