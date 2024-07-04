@@ -30,6 +30,7 @@ async function getStories() {
             stories.push(story);
             console.log("Story retrieved:", story); // Log della storia recuperata
         });
+        console.log("Stories:", stories); // Log dell'intero array di storie
     } catch (error) {
         console.error("Error retrieving stories:", error);
     }
@@ -39,6 +40,10 @@ async function getStories() {
 // Funzione per mostrare la pagina
 function showPage(stories, index) {
     const contentDiv = document.getElementById('content');
+    if (!contentDiv) {
+        console.error("Element with id 'content' not found.");
+        return;
+    }
     contentDiv.style.opacity = 0; // Effetto di dissolvenza in uscita
     setTimeout(() => {
         contentDiv.textContent = stories[index].content; // Mostra il contenuto della storia
@@ -48,13 +53,21 @@ function showPage(stories, index) {
 
 // Funzione principale per gestire il ciclo delle pagine
 async function cyclePages() {
-    const stories = await getStories();
-    let index = 0;
-    showPage(stories, index);
-    setInterval(() => {
-        index = (index + 1) % stories.length;
+    try {
+        const stories = await getStories();
+        if (stories.length === 0) {
+            console.warn("No stories retrieved.");
+            return;
+        }
+        let index = 0;
         showPage(stories, index);
-    }, 10000);
+        setInterval(() => {
+            index = (index + 1) % stories.length;
+            showPage(stories, index);
+        }, 10000);
+    } catch (error) {
+        console.error("Error in cyclePages:", error);
+    }
 }
 
 // Avvia il ciclo delle pagine quando il DOM è pronto
