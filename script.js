@@ -1,4 +1,8 @@
-// Configura Firebase
+// Importa Firebase SDK
+import firebase from "firebase/app";
+import "firebase/firestore";
+
+// Configura Firebase utilizzando le variabili d'ambiente
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -15,10 +19,18 @@ const db = firebase.firestore();
 // Funzione per ottenere le storie da Firestore
 async function getStories() {
     const stories = [];
-    const querySnapshot = await db.collection("stories").get();
-    querySnapshot.forEach((doc) => {
-        stories.push(doc.data().content);
-    });
+    try {
+        const querySnapshot = await db.collection("stories").get();
+        querySnapshot.forEach((doc) => {
+            stories.push({
+                id: doc.id,
+                author: doc.data().author,
+                content: doc.data().content
+            });
+        });
+    } catch (error) {
+        console.error("Error retrieving stories:", error);
+    }
     return stories;
 }
 
@@ -27,7 +39,7 @@ function showPage(stories, index) {
     const contentDiv = document.getElementById('content');
     contentDiv.style.opacity = 0; // Effetto di dissolvenza in uscita
     setTimeout(() => {
-        contentDiv.textContent = stories[index];
+        contentDiv.textContent = stories[index].content; // Mostra il contenuto della storia
         contentDiv.style.opacity = 1; // Effetto di dissolvenza in entrata
     }, 1000);
 }
