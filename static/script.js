@@ -22,11 +22,13 @@ async function getStories() {
     try {
         const querySnapshot = await db.collection("stories").get();
         querySnapshot.forEach((doc) => {
-            stories.push({
+            const story = {
                 id: doc.id,
                 author: doc.data().author,
                 content: doc.data().content
-            });
+            };
+            stories.push(story);
+            console.log("Story retrieved:", story); // Log della storia recuperata
         });
     } catch (error) {
         console.error("Error retrieving stories:", error);
